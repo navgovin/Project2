@@ -1,0 +1,33 @@
+----------------------------------------
+MessageDateTime= 2016-09-23 12:44:42.740586, CorrelationID= bb0c0160-0ca1-41c6-9d6e-a978d816f374, Level= Critical, ClassName = ApplicationExceptionHandler ,FunctionName= HandleException,applicationName = ApplicationExceptionHandler ,UserMessage= A network error occurred when processing a Web service request or response. See the nested exception for specific details. Error Occurred at 09/23/2016 12:44:42.741
+ ExceptionCode=TRANSPORT_WSI_NETWORK_ERROR  Id=FNRCT0042  Class=FileNet.Api.Exception.ErrorRecord Source=FileNet.Api.Exception.EngineRuntimeException Description=A network error occurred when processing a Web service request or response. See the nested exception for specific details. stackTrace=   at FileNet.Apiimpl.Wsi.SoapSessionWSE.HandleWebException(WebException wexc, Int32& Retries)
+   at FileNet.Apiimpl.Wsi.SoapSessionWSE.HandleException(Exception exc, Int32& Retries)
+   at FileNet.Apiimpl.Wsi.SoapSession.executeGetObject(ConnectionImpl conn, ObjectReferenceBase oa, String continueFrom, PropertyFilter filter, Nullable`1 maxElements)
+   at FileNet.Apiimpl.Wsi.SoapSession.getObject(ConnectionImpl conn, ObjectReferenceBase oa, PropertyFilter filter, Nullable`1 maxElements)
+   at FileNet.Apiimpl.Core.DispatchEntries.FetchObject(DomainImpl domain, String classIdentity, String objectIdentity, PropertyFilter filter)
+   at FileNet.Apiimpl.Core.DomainImpl.FetchObject(String classIdent, String objectIdent, PropertyFilter filter)
+   at FileNet.Api.Core.Factory.ObjectStore.FetchInstance(IDomain domain, String name, PropertyFilter filter)
+   at Ace.AceView.SecurityPolicyDecisionService.BusinessService.PDPACEViewSecurity.FilenetConnectionHelper.Filenetconnection() in c:\Test_Sonar1\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\Ace.AceView.SecurityPolicyDecisionService.BusinessService\PDP\FilenetConnectionHelper.cs:line 45
+   at Ace.AceView.SecurityPolicyDecisionService.BusinessService.PolicyDecisionBusinessServiceAGM.<GetDeajaViewerPrivilegesAGMBusinessService>b__3a() in c:\Test_Sonar1\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\Ace.AceView.SecurityPolicyDecisionService.BusinessService\PDP\PolicyDecisionBusinessServiceAGM.cs:line 304
+   at Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionManagerImpl.Process[TResult](Func`1 action, TResult defaultResult, String policyName) exceptionCode=TRANSPORT_WSI_NETWORK_ERROR
+Caused By: Class=FileNet.Api.Exception.ErrorRecord Source=System.Net.WebException Description=Unable to connect to the remote server stackTrace=   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at FileNet.Apiimpl.Wsi.Stubs.WSE.FNCEWS40Service.GetObjects(ObjectRequestType[] GetObjectsRequest)
+   at FileNet.Apiimpl.Wsi.SoapSessionWSE.PortGetObjects(ObjectRequestType[] requests)
+   at FileNet.Apiimpl.Wsi.SoapSession.executeGetObject(ConnectionImpl conn, ObjectReferenceBase oa, String continueFrom, PropertyFilter filter, Nullable`1 maxElements)
+Caused By: Class=FileNet.Api.Exception.ErrorRecord Source=System.Net.Sockets.SocketException Description=No connection could be made because the target machine actively refused it 172.22.11.85:10160 stackTrace=   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+Client Trace:
+   at FileNet.Apiimpl.Wsi.SoapSessionWSE.HandleWebException(WebException wexc, Int32& Retries)
+   at FileNet.Apiimpl.Wsi.SoapSessionWSE.HandleException(Exception exc, Int32& Retries)
+   at FileNet.Apiimpl.Wsi.SoapSession.executeGetObject(ConnectionImpl conn, ObjectReferenceBase oa, String continueFrom, PropertyFilter filter, Nullable`1 maxElements)
+   at FileNet.Apiimpl.Wsi.SoapSession.getObject(ConnectionImpl conn, ObjectReferenceBase oa, PropertyFilter filter, Nullable`1 maxElements)
+   at FileNet.Apiimpl.Core.DispatchEntries.FetchObject(DomainImpl domain, String classIdentity, String objectIdentity, PropertyFilter filter)
+   at FileNet.Apiimpl.Core.DomainImpl.FetchObject(String classIdent, String objectIdent, PropertyFilter filter)
+   at FileNet.Api.Core.Factory.ObjectStore.FetchInstance(IDomain domain, String name, PropertyFilter filter)
+   at Ace.AceView.SecurityPolicyDecisionService.BusinessService.PDPACEViewSecurity.FilenetConnectionHelper.Filenetconnection() in c:\Test_Sonar1\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\Ace.AceView.SecurityPolicyDecisionService.BusinessService\PDP\FilenetConnectionHelper.cs:line 45
+   at Ace.AceView.SecurityPolicyDecisionService.BusinessService.PolicyDecisionBusinessServiceAGM.<GetDeajaViewerPrivilegesAGMBusinessService>b__3a() in c:\Test_Sonar1\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\Ace.AceView.SecurityPolicyDecisionService.BusinessService\PDP\PolicyDecisionBusinessServiceAGM.cs:line 304
+   at Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionManagerImpl.Process[TResult](Func`1 action, TResult defaultResult, String policyName)
+----------------------------------------

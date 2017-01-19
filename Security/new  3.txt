@@ -1,0 +1,19 @@
+CGM VegaUnity
+ASPAC VegaUnity
+NA VegaUnity
+OGI VegaUnity
+
+
+C:\sonar-runner\MSBuild.SonarQube.Runner.exe begin /k:"CGM_PDPService" /n:"CGM_PDPService" /v:"1.0" /d:sonar.cs.vstest.reportsPaths="E:\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\TestResults\*.trx" /d:sonar.cs.vscoveragexml.reportsPaths="E:\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\TestResults\CodeCoverage\PDPService.coveragexml"
+
+"C:\Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe"
+
+"E:\VS_Ultimate_2013\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" /Logger:trx "E:\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\Ace.AceView.SecurityPolicyDecisionService.UnitTest\bin\Debug\Ace.AceView.SecurityPolicyDecisionService.UnitTest-CSTest.dll"
+
+
+"E:\VS_Ultimate_2013\Team Tools\Dynamic Code Coverage Tools\CodeCoverage.exe" collect /output:"E:\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\TestResults\CodeCoverage\PDPService.coverage" "E:\VS_Ultimate_2013\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" "E:\CGM_SonarReport\Security\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\Ace.AceView.SecurityPolicyDecisionService.UnitTest\bin\Debug\Ace.AceView.SecurityPolicyDecisionService.UnitTest-CSTest.dll"
+
+
+"E:\VS_Ultimate_2013\Team Tools\Dynamic Code Coverage Tools\CodeCoverage.exe" analyze /output:"E:\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\TestResults\CodeCoverage\PDPService.coveragexml" "E:\ACEView.SecurityAdmin.Services\ACEView Security PDP Service\TestResults\CodeCoverage\PDPService.coverage" 
+
+C:\sonar-runner\MSBuild.SonarQube.Runner.exe end
